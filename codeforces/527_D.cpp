@@ -6,7 +6,7 @@ using namespace std;
 
 #define ull unsigned long long
 #define ill long long int
-#define pii pair<int,int>
+#define pii pair<ill,ill>
 #define pb(x) push_back(x)
 #define F(i, a, n) for(int i=(a);i<(n);++i)
 #define FB(i, a, n) for(int i=(a);i>=(n);--i)
@@ -18,12 +18,20 @@ using namespace std;
 #define Sf(x) scanf("%f",&x)
 #define Sd(x) scanf("%lf",&x)
 #define M(x, i) memset(x,i,sizeof(x))
-#define debug(i, sz, x) F(i,0,sz){cout<<x[i]<<" ";}cout<<endl
+#define debug(i, sz, x) F(i,0,sz){cout<<x[i].fi + x[i].se<<" ";}cout<<endl
 #define fi first
 #define se second
 #define INF 1e18
 
 vector<pii> V;
+
+struct less_than_key
+{
+    inline bool operator() (const pii& pair1, const pii& pair2)
+    {
+        return (pair1.fi + pair1.se < pair2.fi + pair2.se);
+    }
+};
 
 
 int main() {
@@ -35,7 +43,8 @@ int main() {
         cin >> x >> w;
         V.pb(pii(x, w));
     }
-    sort(V.begin() , V.end());
+    sort(V.begin() , V.end(), less_than_key());
+//    debug(i, V.size(), V);
     int last = 0;
 
     int ans = 1;
