@@ -37,10 +37,10 @@ int main() {
     }
     sort(V.begin() , V.end());
     int last = 0;
+
     int ans = 1;
     F(i, 1, n) {
         if (V[i].fi - V[i].se >= V[last].fi + V[last].se) {
-            ++i;
             last = i;
             ans++;
         }
