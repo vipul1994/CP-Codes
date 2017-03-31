@@ -1,0 +1,11 @@
+*
+!.gitattributes
+!.gitignore
+!readme.md
+!.gitkeep
+!*.cpp
+!*/
+
+*.idea*
+*cmake-build-debug*
+*CMakeCXXCompilerId*
