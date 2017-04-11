@@ -42,20 +42,18 @@ int main() {
 
 
     ifstream fin(("temp/input.txt"));
-    ofstream outfile ("temp/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+    ofstream outfile("temp/output.txt", std::fstream::in | std::fstream::out | std::fstream::app);
 
     string name, reply;
     int age;
 
-    while (fin >> name >> age >> reply)
-    {
+    while (fin >> name >> age >> reply) {
         cout << name << " " << age << " " << reply << endl;
         outfile << name << " " << age << " " << reply << endl;
     }
 
     fin.close();
     outfile.close();
-
 
 
     return 0;

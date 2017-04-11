@@ -1,8 +1,3 @@
-/*input
-5 5 2
-10110
-*/
-
 /* Vipul Jain */
 
 #include <bits/stdc++.h>
@@ -11,7 +6,7 @@ using namespace std;
 
 #define ull unsigned long long
 #define ill long long int
-#define pii pair<double,double>
+#define pii pair<int,int>
 #define pb(x) push_back(x)
 #define F(i, a, n) for(int i=(a);i<(n);++i)
 #define FB(i, a, n) for(int i=(a);i>=(n);--i)
@@ -26,27 +21,16 @@ using namespace std;
 #define debug(i, sz, x) F(i,0,sz){cout<<x[i]<<" ";}cout<<endl
 #define fi first
 #define se second
+#define INF 1e18
+
+ill a[300010];
 
 int main() {
-    int n, a, b;
+    int n;
     S(n);
-    S(a);
-    S(b);
-
-    a--;
-    b--;
-
-    string s;
-    cin >> s;
-
-    int ans = 0;
-    if (s[a] == s[b]) {
-        ans = 0;
-    } else {
-        ans = 1;
+    F(i, 0, n) {
+        Sl(a[i]);
     }
-    cout << ans << endl;
-
 
     return 0;
 }

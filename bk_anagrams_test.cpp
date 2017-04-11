@@ -28,7 +28,7 @@ map<string, set<int>> ans;
 
 int main() {
     vector<string> input;
-    vector<psi> dup;
+    vector<psi > dup;
     int n;
     cin >> n;
 
@@ -47,7 +47,7 @@ int main() {
     F(i, 0, n - 1) {
         string a = dup[i].fi;
         string b = dup[i + 1].fi;
-        if (a.compare(b) != 0) { continue;}
+        if (a.compare(b) != 0) { continue; }
         if (ans.find(a) == ans.end()) {
             set<int> s;
             s.insert(dup[i].se);

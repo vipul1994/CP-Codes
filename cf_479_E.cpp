@@ -28,9 +28,8 @@ using namespace std;
 int n, a, b, k;
 ill dp[5010][5010];
 
-ill dfs(int a, int k)
-{
-    if (dp[a][k] != -1) {return dp[a][k];}
+ill dfs(int a, int k) {
+    if (dp[a][k] != -1) { return dp[a][k]; }
     cout << a << " " << k << endl;
     if (k == 0) {
         dp[a][k] = 1;
@@ -41,7 +40,7 @@ ill dfs(int a, int k)
     int last = min(n, a + (diff - 1));
     ill ans = 0;
     F(i, start, last + 1) {
-        if (i == a || (abs(b - i) == 1 && k - 1 != 0)) { continue;}
+        if (i == a || (abs(b - i) == 1 && k - 1 != 0)) { continue; }
         ans += dfs(i, k - 1);
         ans %= MOD;
     }

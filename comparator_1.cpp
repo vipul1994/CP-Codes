@@ -23,12 +23,10 @@ using namespace std;
 #define se second
 #define INF 1e18
 
-vector<pii> V;
+vector<pii > V;
 
-struct less_than_key
-{
-    inline bool operator() (const pii& pair1, const pii& pair2)
-    {
+struct less_than_key {
+    inline bool operator()(const pii &pair1, const pii &pair2) {
         return (pair1.fi + pair1.se < pair2.fi + pair2.se);
     }
 };
@@ -43,7 +41,7 @@ int main() {
         cin >> x >> w;
         V.pb(pii(x, w));
     }
-    sort(V.begin() , V.end(), less_than_key());
+    sort(V.begin(), V.end(), less_than_key());
 //    debug(i, V.size(), V);
     int last = 0;
 

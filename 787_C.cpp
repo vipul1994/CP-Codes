@@ -31,8 +31,7 @@ vector<int> players[2];
 int dp[2][7010];
 int n;
 
-int dfs(int person, int index)
-{
+int dfs(int person, int index) {
     if (index == 0) {
         dp[person][index] = 1;
         return 2;
@@ -47,7 +46,7 @@ int dfs(int person, int index)
         }
     }
     dp[person][index] = 3;
-    int len = (int)(players[person].size());
+    int len = (int) (players[person].size());
     F(i, 0, len) {
         int val = dfs(1 - person, (index + players[person][i]) % n);
         if (val == 2) {
@@ -93,16 +92,16 @@ int main() {
     }
 
     F(i, 1, n) {
-        if (dp[0][i] == 0) {cout << "Loop ";}
-        if (dp[0][i] == 1) {cout << "Lose ";}
-        if (dp[0][i] == 2) {cout << "Win ";}
+        if (dp[0][i] == 0) { cout << "Loop "; }
+        if (dp[0][i] == 1) { cout << "Lose "; }
+        if (dp[0][i] == 2) { cout << "Win "; }
     }
     cout << endl;
 
     F(i, 1, n) {
-        if (dp[1][i] == 0) {cout << "Loop ";}
-        if (dp[1][i] == 1) {cout << "Lose ";}
-        if (dp[1][i] == 2) {cout << "Win ";}
+        if (dp[1][i] == 0) { cout << "Loop "; }
+        if (dp[1][i] == 1) { cout << "Lose "; }
+        if (dp[1][i] == 2) { cout << "Win "; }
     }
     cout << endl;
     return 0;

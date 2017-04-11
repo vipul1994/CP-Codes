@@ -40,7 +40,7 @@ int main() {
         S(a[i]);
     }
 
-    queue<pii> index;
+    queue<pii > index;
     queue<int> slope;
 
     index.push(pii(200, 200));
@@ -98,7 +98,7 @@ int main() {
     int ans = 0;
     F(i, 0, 400) {
         F(j, 0, 400) {
-            if (matrix[i][j] == 0) {ans++;}
+            if (matrix[i][j] == 0) { ans++; }
         }
     }
 

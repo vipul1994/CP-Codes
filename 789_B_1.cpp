@@ -26,6 +26,7 @@ using namespace std;
 
 ill a[100010];
 ill b[100010];
+
 int main() {
     ill b1, q, l, m;
     cin >> b1 >> q >> l >> m;
@@ -111,9 +112,9 @@ int main() {
     sort(a, a + m);
     ill ans = counter;
     F(i, 0, m) {
-        if (i != 0 && a[i - 1] == a[i]) { continue;}
+        if (i != 0 && a[i - 1] == a[i]) { continue; }
         F(j, 0, counter) {
-            if (a[i] == b[j]) {ans--;}
+            if (a[i] == b[j]) { ans--; }
         }
     }
 

@@ -29,14 +29,14 @@ int main() {
     cin >> a >> b >> c >> d;
     ill ans = INF;
     F(i, 0, 100010) {
-        if ((b - d +  i * a) >= 0 && (b - d +  i * a) % c == 0) {
-            ans = min(ans, (ill)(b + i * a));
+        if ((b - d + i * a) >= 0 && (b - d + i * a) % c == 0) {
+            ans = min(ans, (ill) (b + i * a));
             break;
         }
     }
     F(i, 0, 100010) {
-        if ((d - b +  i * c) >= 0 && (d - b +  i * c) % a == 0) {
-            ans = min(ans, (ill)(d + i * c));
+        if ((d - b + i * c) >= 0 && (d - b + i * c) % a == 0) {
+            ans = min(ans, (ill) (d + i * c));
             break;
         }
     }

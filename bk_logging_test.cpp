@@ -37,8 +37,7 @@ int main() {
     ifstream inputFile("temp/input.txt");
     string line;
 
-    while (getline(inputFile, line))
-    {
+    while (getline(inputFile, line)) {
         istringstream ss(line);
 //        cout << "line = " << line << endl;
         string requestId, timestamp, message;
@@ -60,7 +59,7 @@ int main() {
         message = line.substr(pre_index, line.size() - pre_index);
 //        cout << requestId << " " << timestamp << " " << message << endl;
         if (logs.find(requestId) == logs.end()) {
-            vector<pss> v;
+            vector<pss > v;
             v.pb(pss(timestamp, message));
             logs[requestId] = v;
         } else {
@@ -73,7 +72,7 @@ int main() {
     auto it = logs.begin();
     FI(it, logs) {
         cout << it->first << endl;
-        vector<pss> v = it->second;
+        vector<pss > v = it->second;
         debug(i, v.size(), v);
         F(i, 0, v.size()) {
             string ts = v[i].first;
